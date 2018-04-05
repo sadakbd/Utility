@@ -1,2 +1,17 @@
-# Utility
+	@Async
+	public Future<ResponseEntity<String>> RobinhoodApiRequest(String uri, HttpMethod httpMethod,
+			HttpEntity<Object> reqEntity) {
 
+		ResponseEntity<String> respEntity = null;
+
+		String url = "www.test.com";
+		try {			
+			respEntity = restTemplate.exchange(url, httpMethod, reqEntity, String.class);
+		} catch (Exception e) {
+			if (e.getMessage().equals("")) {
+				log.error(e.getMessage(), e);
+
+			}
+		}
+		return new AsyncResult<>(respEntity);
+	}
