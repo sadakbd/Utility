@@ -1,13 +1,20 @@
 package com.tree;
 
-public class Pair<T, U> {
+public class Pair {
 
-	public final T key;
-	public final U value;
+	public final Integer childId;
+	public final Integer parentId;
 
-	public Pair(T key, U value) {
-		this.key = key;
-		this.value = value;
+	public Pair(Integer childId, Integer parentId) {
+		this.childId = childId;
+		this.parentId = parentId;
 	}
+
+	@Override
+	public String toString() {
+		return "Pair [childId=" + childId + ", parentId=" + parentId + "]";
+	}
+	
+	
 
 }
