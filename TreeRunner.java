@@ -12,6 +12,20 @@ public class TreeRunner {
 	 * 1000 34585 32899
 	 * 
 	 */
+	private void prepData() {
+
+		pairs.sort((p1, p2) -> {
+			if (p1.childId.compareTo(p2.childId) == 0) {
+				return p1.parentId.compareTo(p2.parentId);
+			} else {
+				return p1.childId.compareTo(p2.childId);
+			}
+		});
+
+		for (Pair pair : pairs) {
+			System.out.println(pair.childId + "->" + pair.parentId);
+		}
+
 
 	public static void main(String[] args) {
 		List<Pair> pairs = new ArrayList<Pair>();
